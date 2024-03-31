@@ -14,6 +14,10 @@ module.exports = {
       },
       backgroundImage:{
         homeBg: 'url("https://assets.website-files.com/63d0c13bf294b9ad2ad7a1f0/63fc8f011df7042b653ee41c_hero-image-1-1.jpg")'
+      },
+      screens:{
+        widescreen: { raw: "(min-aspect-ratio: 3/2)" },
+        tallscreen: { raw: "(max-aspect-ratio: 13/20)" }
       }
     },
   },
