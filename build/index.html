@@ -11,6 +11,7 @@
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+            <script src="./js/index.js" defer></script>
         <title>Restaurant Template</title>
         <link rel="stylesheet" href="./css/style.css" />
     </head>
@@ -91,14 +92,14 @@
                 id="about"
                 class="bg-[url('https://assets.website-files.com/63d0c13bf294b9ad2ad7a1f0/63fc745af7ed692b2a0ce9c2_about-banner-bg-1-1.jpg')] pt-8">
                 <div class="sm:w-4/5 mx-auto mt-8">
-                    <h1 class="text-white text-5xl text-center mb-16">
+                    <h1 class="text-white text-5xl text-center mb-14">
                         About Us
                     </h1>
                     <div
                         class="flex justify-between items-start md:flex-col lg:flex-row">
                         <article class="sm:max-w-lg p-4">
                             <h2
-                                class="text-white text-4xl font-medium sm:mb-12 sm:text-5xl mb-8">
+                                class="text-white text-3xl font-medium sm:mb-12 sm:text-5xl mb-8">
                                 Special Dishes for every Traditional Occasion
                             </h2>
 
@@ -182,29 +183,35 @@
                         </button>
                     </div>
                     <div class="grid mt-16">
+                        <div id="displayed-food" class="sm:hidden flex items-center">
+                            <i class="fa-solid fa-angles-left text-primary text-4xl sm:hidden" id="prevBtn"></i>
+                            <article
+                            class="flex flex-col gap-y-4 p-4 bg-tertiary">
+                            <img
+                                src="https://assets.website-files.com/63d61449103cc0c595394427/63f04b09848cba5f1e062951_garlic-shrimp-spaghetti.png"
+                                alt="" />
+                            <h2 class="text-white text-xl">
+                                Garlic Shrimp Spaghetti
+                            </h2>
+                            <p class="text-secondary">
+                                Rice Spagherri, Latus, Shrimp, Onion Lemon,
+                                Garlic, Coriander
+                            </p>
+                            <div class="flex justify-between border-t pt-4">
+                                <p class="text-white">200.00 ETB</p>
+                                <button>
+                                    <i
+                                        class="fa-solid fa-cart-shopping text-white"></i>
+                                </button>
+                            </div>
+                            
+                        </article>
+                        <i class="fa-solid fa-angles-right  text-4xl text-primary sm:hidden" id="nextBtn"></i>
+                        </div>
                         <div
-                            class="grid grid-cols-1 auto-cols-fr sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 w-5/6 mx-auto">
-                            <article
-                                class="flex flex-col gap-y-4 p-4 bg-tertiary">
-                                <img
-                                    src="https://assets.website-files.com/63d61449103cc0c595394427/63f04b09848cba5f1e062951_garlic-shrimp-spaghetti.png"
-                                    alt="" />
-                                <h2 class="text-white text-xl">
-                                    Garlic Shrimp Spaghetti
-                                </h2>
-                                <p class="text-secondary">
-                                    Rice Spagherri, Latus, Shrimp, Onion Lemon,
-                                    Garlic, Coriander
-                                </p>
-                                <div class="flex justify-between border-t pt-4">
-                                    <p class="text-white">200.00 ETB</p>
-                                    <button>
-                                        <i
-                                            class="fa-solid fa-cart-shopping text-white"></i>
-                                    </button>
-                                </div>
-                            </article>
-                            <article
+                            class="sm:grid grid-cols-1 auto-cols-fr sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:gap-8 w-11/12 mx-auto hidden sm:block" id="food-container">
+                            
+                            <!-- <article
                                 class="flex flex-col gap-y-4 p-4 mx-auto bg-tertiary">
                                 <img
                                     src="https://assets.website-files.com/63d61449103cc0c595394427/63f04b09848cba5f1e062951_garlic-shrimp-spaghetti.png"
@@ -303,7 +310,7 @@
                                             class="fa-solid fa-cart-shopping text-white"></i>
                                     </button>
                                 </div>
-                            </article>
+                            </article> -->
                         </div>
                     </div>
                 </div>
