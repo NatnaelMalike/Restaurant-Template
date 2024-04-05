@@ -11,12 +11,13 @@
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-            <script src="./js/index.js" defer></script>
+        <script src="./js/index.js"></script>
+        <script src="./js/firstRender.js"></script>
         <title>Restaurant Template</title>
         <link rel="stylesheet" href="./css/style.css" />
     </head>
-    <body class="min-h-screen font-poppins relative bg-tertiary">
-        <header class="absolute top-0 w-full">
+    <body class="min-h-screen font-poppins bg-tertiary">
+        <header class="fixed top-0 w-full bg-tertiary">
             <section
                 id="desktop-menu"
                 class="sm:w-4/5 mx-auto flex justify-between p-4 items-center sticky top-0">
@@ -27,7 +28,7 @@
                         class="w-20" />
                     <h1 class="text-4xl text-primary">አቢሲኒያ</h1>
                 </div>
-                <nav class="lg:text-2xl hidden lg:block space-x-8">
+                <nav class="lg:text-2xl lg:block space-x-8 fixed top-0 right-0 bottom-0 left-1/4 z-20 flex flex-col transform translate-x-full transition-transform duration-500 ease-in-out py-40 px-8 page-navigation">
                     <a
                         href="#about"
                         class="hover:text-primary transition duration-300 font-medium text-white"
@@ -156,161 +157,78 @@
                     <h1 class="text-white text-5xl text-center mb-16">
                         Our Menu
                     </h1>
-                    <div class="flex flex-wrap gap-x-4 justify-center gap-y-4">
+                    <div class="flex flex-wrap gap-x-4 justify-center gap-y-4 px-4">
                         <button
-                            class="text-xl text-white border py-4 px-6 hover:bg-primary bg-transparent border-white transition duration-300 hover:-translate-y-2 hover:border-primary whitespace-nowrap">
-                            All
-                        </button>
-                        <button
-                            class="text-xl text-white border py-4 px-6 hover:bg-primary bg-transparent border-white transition duration-300 hover:-translate-y-2 hover:border-primary whitespace-nowrap">
+                            class="text-xl text-white border py-4 px-6 hover:bg-primary bg-transparent border-white transition duration-300 hover:-translate-y-2 hover:border-primary whitespace-nowrap"
+                            role="tab"
+                            aria-controls="breakfast"
+                            aria-selected="true">
                             Breakfast
                         </button>
                         <button
-                            class="text-xl text-white border py-4 px-6 hover:bg-primary bg-transparent border-white transition duration-300 hover:-translate-y-2 hover:border-primary whitespace-nowrap">
+                            class="text-xl text-white border py-4 px-6 hover:bg-primary bg-transparent border-white transition duration-300 hover:-translate-y-2 hover:border-primary whitespace-nowrap"
+                            role="tab"
+                            aria-controls="lunch"
+                            aria-selected="true">
                             Lunch
                         </button>
                         <button
-                            class="text-xl text-white border py-4 px-6 hover:bg-primary bg-transparent border-white transition duration-300 hover:-translate-y-2 hover:border-primary whitespace-nowrap">
+                            class="text-xl text-white border py-4 px-6 hover:bg-primary bg-transparent border-white transition duration-300 hover:-translate-y-2 hover:border-primary whitespace-nowrap"
+                            role="tab"
+                            aria-controls="brunch"
+                            aria-selected="true">
                             Brunch
                         </button>
                         <button
-                            class="text-xl text-white border py-4 px-6 hover:bg-primary bg-transparent border-white transition duration-300 hover:-translate-y-2 hover:border-primary whitespace-nowrap">
+                            class="text-xl text-white border py-4 px-6 hover:bg-primary bg-transparent border-white transition duration-300 hover:-translate-y-2 hover:border-primary whitespace-nowrap"
+                            role="tab"
+                            aria-controls="dinner"
+                            aria-selected="true">
                             Dinner
                         </button>
                         <button
-                            class="text-xl text-white border py-4 px-6 hover:bg-primary bg-transparent border-white transition duration-300 hover:-translate-y-2 hover:border-primary whitespace-nowrap">
+                            class="text-xl text-white border py-4 px-6 hover:bg-primary bg-transparent border-white transition duration-300 hover:-translate-y-2 hover:border-primary whitespace-nowrap"
+                            role="tab"
+                            aria-controls="drinks"
+                            aria-selected="true">
                             Drinks
                         </button>
                     </div>
                     <div class="grid mt-16">
-                        <div id="displayed-food" class="sm:hidden flex items-center">
-                            <i class="fa-solid fa-angles-left text-primary text-4xl sm:hidden" id="prevBtn"></i>
-                            <article
-                            class="flex flex-col gap-y-4 p-4 bg-tertiary">
-                            <img
-                                src="https://assets.website-files.com/63d61449103cc0c595394427/63f04b09848cba5f1e062951_garlic-shrimp-spaghetti.png"
-                                alt="" />
-                            <h2 class="text-white text-xl">
-                                Garlic Shrimp Spaghetti
-                            </h2>
-                            <p class="text-secondary">
-                                Rice Spagherri, Latus, Shrimp, Onion Lemon,
-                                Garlic, Coriander
-                            </p>
-                            <div class="flex justify-between border-t pt-4">
-                                <p class="text-white">200.00 ETB</p>
-                                <button>
-                                    <i
-                                        class="fa-solid fa-cart-shopping text-white"></i>
-                                </button>
+                        <div class="sm:hidden flex items-center px-4">
+                            <i
+                                class="fa-solid fa-angles-left text-primary text-4xl sm:hidden"
+                                id="prevBtn"></i>
+                            <div id="displayed-food">
+                                <!-- <article
+                                    class="flex flex-col gap-y-4 p-4 bg-tertiary">
+                                    <img src="https://assets.website-files.com/63d61449103cc0c595394427/63f04a2cb50e555f9bdf6ea0_healthy-vegan-salad.png" alt="" />
+                                    <h2 class="text-white text-xl">
+                                        Healthy Vegan Salad
+                                    </h2>
+                                    <p class="text-secondary">
+                                        "Rice Spagherri, Latus, Shrimp, Onion Lemon, Garlic, Coriander"
+                                    </p>
+                                    <div
+                                        class="flex justify-between border-t pt-4">
+                                        <p class="text-white">
+                                            112.85 ETB
+                                        </p>
+                                        <button>
+                                            <i
+                                                class="fa-solid fa-cart-shopping text-white"></i>
+                                        </button>
+                                    </div>
+                                </article> -->
                             </div>
-                            
-                        </article>
-                        <i class="fa-solid fa-angles-right  text-4xl text-primary sm:hidden" id="nextBtn"></i>
+                            <i
+                                class="fa-solid fa-angles-right text-4xl text-primary sm:hidden"
+                                id="nextBtn"></i>
                         </div>
                         <div
-                            class="sm:grid grid-cols-1 auto-cols-fr sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:gap-8 w-11/12 mx-auto hidden sm:block" id="food-container">
-                            
-                            <!-- <article
-                                class="flex flex-col gap-y-4 p-4 mx-auto bg-tertiary">
-                                <img
-                                    src="https://assets.website-files.com/63d61449103cc0c595394427/63f04b09848cba5f1e062951_garlic-shrimp-spaghetti.png"
-                                    alt="" />
-                                <h2 class="text-white text-xl">
-                                    Garlic Shrimp Spaghetti
-                                </h2>
-                                <p class="text-secondary">
-                                    Rice Spagherri, Latus, Shrimp, Onion Lemon,
-                                    Garlic, Coriander
-                                </p>
-                                <div class="flex justify-between border-t pt-4">
-                                    <p class="text-white">200.00 ETB</p>
-                                    <button>
-                                        <i
-                                            class="fa-solid fa-cart-shopping text-white"></i>
-                                    </button>
-                                </div>
-                            </article>
-                            <article
-                                class="flex flex-col gap-y-4 p-4 mx-auto bg-tertiary">
-                                <img
-                                    src="https://assets.website-files.com/63d61449103cc0c595394427/63f04b09848cba5f1e062951_garlic-shrimp-spaghetti.png"
-                                    alt="" />
-                                <h2 class="text-white text-xl">
-                                    Garlic Shrimp Spaghetti
-                                </h2>
-                                <p class="text-secondary">
-                                    Rice Spagherri, Latus, Shrimp, Onion Lemon,
-                                    Garlic, Coriander
-                                </p>
-                                <div class="flex justify-between border-t pt-4">
-                                    <p class="text-white">200.00 ETB</p>
-                                    <button>
-                                        <i
-                                            class="fa-solid fa-cart-shopping text-white"></i>
-                                    </button>
-                                </div>
-                            </article>
-                            <article
-                                class="flex flex-col gap-y-4 p-4 mx-auto bg-tertiary">
-                                <img
-                                    src="https://assets.website-files.com/63d61449103cc0c595394427/63f04b09848cba5f1e062951_garlic-shrimp-spaghetti.png"
-                                    alt="" />
-                                <h2 class="text-white text-xl">
-                                    Garlic Shrimp Spaghetti
-                                </h2>
-                                <p class="text-secondary">
-                                    Rice Spagherri, Latus, Shrimp, Onion Lemon,
-                                    Garlic, Coriander
-                                </p>
-                                <div class="flex justify-between border-t pt-4">
-                                    <p class="text-white">200.00 ETB</p>
-                                    <button>
-                                        <i
-                                            class="fa-solid fa-cart-shopping text-white"></i>
-                                    </button>
-                                </div>
-                            </article>
-                            <article
-                                class="flex flex-col gap-y-4 p-4 mx-auto bg-tertiary">
-                                <img
-                                    src="https://assets.website-files.com/63d61449103cc0c595394427/63f04b09848cba5f1e062951_garlic-shrimp-spaghetti.png"
-                                    alt="" />
-                                <h2 class="text-white text-xl">
-                                    Garlic Shrimp Spaghetti
-                                </h2>
-                                <p class="text-secondary">
-                                    Rice Spagherri, Latus, Shrimp, Onion Lemon,
-                                    Garlic, Coriander
-                                </p>
-                                <div class="flex justify-between border-t pt-4">
-                                    <p class="text-white">200.00 ETB</p>
-                                    <button>
-                                        <i
-                                            class="fa-solid fa-cart-shopping text-white"></i>
-                                    </button>
-                                </div>
-                            </article>
-                            <article
-                                class="flex flex-col gap-y-4 p-4 mx-auto bg-tertiary">
-                                <img
-                                    src="https://assets.website-files.com/63d61449103cc0c595394427/63f04b09848cba5f1e062951_garlic-shrimp-spaghetti.png"
-                                    alt="" />
-                                <h2 class="text-white text-xl">
-                                    Garlic Shrimp Spaghetti
-                                </h2>
-                                <p class="text-secondary">
-                                    Rice Spagherri, Latus, Shrimp, Onion Lemon,
-                                    Garlic, Coriander
-                                </p>
-                                <div class="flex justify-between border-t pt-4">
-                                    <p class="text-white">200.00 ETB</p>
-                                    <button>
-                                        <i
-                                            class="fa-solid fa-cart-shopping text-white"></i>
-                                    </button>
-                                </div>
-                            </article> -->
+                            class="sm:grid grid-cols-1 auto-cols-fr sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:gap-8 w-5/6 mx-auto hidden"
+                            id="food-container">
+
                         </div>
                     </div>
                 </div>
@@ -466,93 +384,102 @@
             </section>
         </main>
         <footer>
-          <div class="sm:w-4/5 mx-auto flex flex-col items-center mt-8 sm:flex-row sm:justify-between">
-            <div class="flex flex-col justify-center items-center">
-              <div class="flex items-center">
-                  <img
-                      src="./images/abyssinia-favicon-black.png"
-                      alt=""
-                      class="w-16" />
-                  <h1 class="text-3xl text-primary">አቢሲኒያ</h1>
-              </div>
-              <p class="text-secondary">
-                  Discover the essence of Ethiopia at Abysinia
-              </p>
-              <ul class="flex gap-x-8 items-center mt-8">
-                  <li>
-                      <a
-                          href="http://www.facebook.com"
-                          class="text-white text-3xl"
-                          target="_blank">
-                          <i class="fa-brands fa-facebook"></i
-                      ></a>
-                  </li>
-                  <li>
-                      <a
-                          href="http://www.twitter.com"
-                          class="text-white text-3xl"
-                          target="_blank">
-                          <i class="fa-brands fa-x-twitter"></i
-                      ></a>
-                  </li>
-                  <li>
-                      <a
-                          href="http://www.instagram.com"
-                          class="text-white text-3xl"
-                          target="_blank">
-                          <i class="fab fa-instagram"></i
-                      ></a>
-                  </li>
-                  <li>
-                      <a
-                          href="http://www.youtube.com"
-                          class="text-white text-3xl"
-                          target="_blank">
-                          <i class="fab fa-youtube"></i
-                      ></a>
-                  </li>
-              </ul>
-          </div>
+            <div
+                class="sm:w-4/5 mx-auto flex flex-col items-center mt-8 sm:flex-row sm:justify-between">
+                <div class="flex flex-col justify-center items-center">
+                    <div class="flex items-center">
+                        <img
+                            src="./images/abyssinia-favicon-black.png"
+                            alt=""
+                            class="w-16" />
+                        <h1 class="text-3xl text-primary">አቢሲኒያ</h1>
+                    </div>
+                    <p class="text-secondary">
+                        Discover the essence of Ethiopia at Abysinia
+                    </p>
+                    <ul class="flex gap-x-8 items-center mt-8">
+                        <li>
+                            <a
+                                href="http://www.facebook.com"
+                                class="text-white text-3xl"
+                                target="_blank">
+                                <i class="fa-brands fa-facebook"></i
+                            ></a>
+                        </li>
+                        <li>
+                            <a
+                                href="http://www.twitter.com"
+                                class="text-white text-3xl"
+                                target="_blank">
+                                <i class="fa-brands fa-x-twitter"></i
+                            ></a>
+                        </li>
+                        <li>
+                            <a
+                                href="http://www.instagram.com"
+                                class="text-white text-3xl"
+                                target="_blank">
+                                <i class="fab fa-instagram"></i
+                            ></a>
+                        </li>
+                        <li>
+                            <a
+                                href="http://www.youtube.com"
+                                class="text-white text-3xl"
+                                target="_blank">
+                                <i class="fab fa-youtube"></i
+                            ></a>
+                        </li>
+                    </ul>
+                </div>
 
-          <nav class="space-y-4 lg:block hidden">
-            <a
-                href="#about"
-                class="hover:text-primary transition duration-300 text-secondary block"
-                >About</a
-            >
-            <a
-                href="#menu"
-                class="hover:text-primary transition duration-300 text-secondary block"
-                >Menu</a
-            >
-            <a
-                href="#reservation"
-                class="hover:text-primary transition duration-300 text-secondary block"
-                >Reservation</a
-            >
-            <a
-                href="#contact-us"
-                class="hover:text-primary transition duration-300 text-secondary block"
-                >Contact US</a
-            >
-        </nav>
-          <ul
-              class=" mt-8 space-y-4">
-              <li class="mb-4 text-secondary">
-                <i class="fa fa-map-marker mr-4"></i>007 Hanan K Plaza <br />
-                  22 Mazoria, Addis Ababa, Ethiopia
-              </li>
-              <li class="mb-4 text-secondary">
-                <p><i class="fa fa-envelope-open mr-4"></i>natnaelmalike@gmail.com </p>
-                  <p><i class="fa fa-envelope-open mr-4"></i>kalebalebachew@gmail.com</p>
-              </li>
-              <li class="text-secondary">
-                  <p><i class="fa fa-phone mr-4"></i>+251 915025399</p>
-                  <p><i class="fa fa-phone mr-4"></i>+251 947827804</p>
-              </li>
-          </ul>
-          </div>
-           <p class="text-white text-center mt-8"> <span class="text-primary">&copy;</span> All Rights Reserved.</p>
+                <nav class="space-y-4 lg:block hidden">
+                    <a
+                        href="#about"
+                        class="hover:text-primary transition duration-300 text-secondary block"
+                        >About</a
+                    >
+                    <a
+                        href="#menu"
+                        class="hover:text-primary transition duration-300 text-secondary block"
+                        >Menu</a
+                    >
+                    <a
+                        href="#reservation"
+                        class="hover:text-primary transition duration-300 text-secondary block"
+                        >Reservation</a
+                    >
+                    <a
+                        href="#contact-us"
+                        class="hover:text-primary transition duration-300 text-secondary block"
+                        >Contact US</a
+                    >
+                </nav>
+                <ul class="mt-8 space-y-4">
+                    <li class="mb-4 text-secondary">
+                        <i class="fa fa-map-marker mr-4"></i>007 Hanan K Plaza
+                        <br />
+                        22 Mazoria, Addis Ababa, Ethiopia
+                    </li>
+                    <li class="mb-4 text-secondary">
+                        <p>
+                            <i class="fa fa-envelope-open mr-4"></i
+                            >natnaelmalike@gmail.com
+                        </p>
+                        <p>
+                            <i class="fa fa-envelope-open mr-4"></i
+                            >kalebalebachew@gmail.com
+                        </p>
+                    </li>
+                    <li class="text-secondary">
+                        <p><i class="fa fa-phone mr-4"></i>+251 915025399</p>
+                        <p><i class="fa fa-phone mr-4"></i>+251 947827804</p>
+                    </li>
+                </ul>
+            </div>
+            <p class="text-white text-center mt-8">
+                <span class="text-primary">&copy;</span> All Rights Reserved.
+            </p>
         </footer>
     </body>
 </html>
