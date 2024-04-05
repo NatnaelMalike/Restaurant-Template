@@ -12,7 +12,7 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
         <script src="./js/index.js"></script>
-        <script src="./js/firstRender.js"></script>
+        <script src="./js/script.js"></script>
         <title>Restaurant Template</title>
         <link rel="stylesheet" href="./css/style.css" />
     </head>
@@ -28,25 +28,30 @@
                         class="w-20" />
                     <h1 class="text-4xl text-primary">አቢሲኒያ</h1>
                 </div>
-                <nav class="lg:text-2xl lg:block space-x-8 fixed top-0 right-0 bottom-0 left-1/4 z-20 flex flex-col transform translate-x-full transition-transform duration-500 ease-in-out py-40 px-8 page-navigation">
+                <nav id="mobileNav" class="lg:text-2xl lg:block space-x-8 sml:page-navigation" data-visible="false">
                     <a
-                        href="#about"
-                        class="hover:text-primary transition duration-300 font-medium text-white"
-                        >About</a
+                        href="#home"
+                        class="hover:text-primary transition duration-300 font-medium text-white sm:hidden  links"
+                        >Home</a
                     >
                     <a
+                        href="#about"
+                        class="hover:text-primary transition duration-300 font-medium text-white links"
+                        >About</a
+                    >
+                    <a links
                         href="#menu"
-                        class="hover:text-primary transition duration-300 font-medium text-white"
+                        class="hover:text-primary transition duration-300 font-medium text-white links"
                         >Menu</a
                     >
                     <a
                         href="#reservation"
-                        class="hover:text-primary transition duration-300 font-medium text-white"
+                        class="hover:text-primary transition duration-300 font-medium text-white links"
                         >Reservation</a
                     >
                     <a
                         href="#contact-us"
-                        class="hover:text-primary transition duration-300 font-medium text-white"
+                        class="hover:text-primary transition duration-300 font-medium text-white links"
                         >Contact US</a
                     >
                 </nav>
@@ -55,11 +60,10 @@
                     <h2 class="sm:block hidden">Cart</h2>
                     <i class="fa-solid fa-cart-shopping"></i>
                 </div>
-                <button class="lg:hidden">
-                    <i class="fa-solid fa-bars text-white text-4xl"></i>
+                <button id="toggleBtn" class="lg:hidden z-20" aria-expanded="false">
+                    <i class="fa-solid fa-bars text-white text-4xl" id="icon"></i>
                 </button>
             </section>
-            <section id="mobile-menu"></section>
         </header>
         <main>
             <section
