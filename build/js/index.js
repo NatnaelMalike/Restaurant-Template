@@ -1,6 +1,4 @@
-
-document.addEventListener('DOMContentLoaded',function (){
-    
+document.addEventListener("DOMContentLoaded", function () {
     const foods = {
         breakfast: [
             {
@@ -213,48 +211,38 @@ document.addEventListener('DOMContentLoaded',function (){
             },
         ],
     };
-    
+
     const nextBtn = document.querySelector("#nextBtn");
     const prevBtn = document.querySelector("#prevBtn");
     const displayedFood = document.querySelector("#displayed-food");
-    const foodContainer = document.querySelector("#food-container");
-    let screenWidth = 0;
+
     let index = 0;
-    let activeCatagory = null;
-    let hasNext = null;
-    let hasPrev = null;
-    
-    function updateViewportSize() {
-        screenWidth = window.innerWidth || document.documentElement.clientWidth;
-    }
-    
-    updateViewportSize();
-    window.addEventListener("resize", function () {
-        updateViewportSize();
-    });
+    let activeCatagory = 'breakfast';
+    let hasNext = index < foods[activeCatagory].length -1;
+    let hasPrev = index > 0;
+
+    const tabInit = document.querySelector('[aria-controls="breakfast"]')
+    tabInit.classList.add('active')
+    renderCategory('breakfast')
+    mobileRender('breakfast')
 
     const tabs = document.querySelectorAll('[role="tab"]');
     tabs.forEach((tab) => {
-        tab.addEventListener("click", handleMenuClick);
+        tab.addEventListener("click", function(){
+            const foodCategory = this.getAttribute("aria-controls");
+            activeCatagory = foodCategory
+            tabs.forEach((tab) => {
+                tab.classList.remove('active');
+            })
+            tab.classList.add('active')
+            index = 0
+            renderCategory(foodCategory);
+            mobileRender(foodCategory)
+        });
     });
-
-    function handleMenuClick(e) {
-        const clicked = e.target;
-        const foodCategory = clicked.getAttribute('aria-controls');
-        activeCatagory = foodCategory;
-        if (screenWidth < 640) {
-            index = 0;
-            changeFoodMobile(activeCatagory);
-        } else {
-            foodContainer.innerHTML = "";
-            renderFoods(activeCatagory);
-        }
-    }
-
-    function changeFoodMobile(foodCategory) {
+ 
+    function mobileRender(foodCategory) {
         let menu = foods[foodCategory];
-        hasNext = index < menu.length - 1;
-        hasPrev = index > 0;
         let foodItem = menu[index];
         displayedFood.innerHTML = `
             <article
@@ -277,41 +265,45 @@ document.addEventListener('DOMContentLoaded',function (){
                 </div>
             </article>
             `;
+            hasNext = index < foods[foodCategory].length -1;
+            hasPrev = index > 0;
     }
 
-    function renderFoods(foodsCategory) {
-        const menu = foods[foodsCategory];
-        foodContainer.innerHTML = '';
-        menu.forEach((foodItem) => {
-            foodContainer.innerHTML += `
-            <article
-                class="flex flex-col gap-y-4 p-4 bg-tertiary">
-                <img
-                    src=${foodItem.imgAddress}
-                    alt="" />
-                <h2 class="text-white text-xl">
-                    ${foodItem.title}
-                </h2>
-                <p class="text-secondary">
-                    ${foodItem.ingredients}
-                </p>
-                <div class="flex justify-between border-t pt-4">
-                    <p class="text-white">${foodItem.price} ETB</p>
-                    <button>
-                        <i
-                            class="fa-solid fa-cart-shopping text-white"></i>
-                    </button>
-                </div>
-            </article>
-            `;
+    function renderCategory(category) {
+        const foodList = foods[category];
+        const menuContainer = document.getElementById("food-container");
+        menuContainer.innerHTML = "";
+        foodList.forEach((food) => {
+            const foodItem = document.createElement("article");
+            foodItem.classList.add(
+                "flex",
+                "flex-col",
+                "gap-y-4",
+                "p-4",
+                "bg-tertiary"
+            );
+            foodItem.innerHTML = `
+          <img
+                        src=${food.imgAddress}
+                        alt="" />
+                    <h2 class="text-white text-xl">
+                        ${food.title}
+                    </h2>
+                    <p class="text-secondary">
+                        ${food.ingredients}
+                    </p>
+                    <div class="flex justify-between border-t pt-4">
+                        <p class="text-white">${food.price} ETB</p>
+                        <button>
+                            <i
+                                class="fa-solid fa-cart-shopping text-white"></i>
+                        </button>
+                    </div>
+          `;
+            menuContainer.appendChild(foodItem);
         });
     }
 
-    if (screenWidth < 640) {
-        changeFoodMobile('breakfast');
-    } else {
-        renderFoods('breakfast');
-    }
 
     nextBtn.addEventListener("click", handleNextClick);
     prevBtn.addEventListener("click", handlePrevClick);
@@ -319,16 +311,15 @@ document.addEventListener('DOMContentLoaded',function (){
     function handleNextClick() {
         if (hasNext) {
             index++;
-            changeFoodMobile(activeCatagory);
+            mobileRender(activeCatagory);
         }
     }
 
     function handlePrevClick() {
         if (hasPrev) {
             index--;
-            changeFoodMobile(activeCatagory);
+            mobileRender(activeCatagory);
         }
     }
-});
 
-
+})

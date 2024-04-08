@@ -12,4 +12,7 @@
     .page-navigation[data-visible = "true"]{
       @apply transform  translate-x-0;
     }
+    .active{
+      @apply border-primary
+    }
 }
