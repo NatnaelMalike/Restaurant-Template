@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 * {
 	margin: 0;
@@ -39,7 +39,7 @@ body.dark {
 	--light: #0C0C1E;
 	--grey: #060714;
 	--dark: #FBFBFB;
-}
+} */
 
 /* body {
 	background: var(--grey);
@@ -164,12 +164,12 @@ body.dark {
 
 
 /* CONTENT */
-#content {
+/* #content {
 	position: relative;
 	width: calc(100% - 280px);
 	left: 280px;
 	transition: .3s ease;
-}
+} */
 /* #sidebar.hide ~ #content {
 	width: calc(100% - 60px);
 	left: 60px;
@@ -202,7 +202,7 @@ body.dark {
 	border-radius: 50%;
 	box-shadow: -20px -20px 0 rgb(255,255,255);
 } */
-#content nav a {
+/* #content nav a {
 	color: var(--dark);
 }
 #content nav .bx.bx-menu {
@@ -225,8 +225,8 @@ body.dark {
 	display: flex;
 	align-items: center;
 	height: 36px;
-}
-#content nav form .form-input input {
+} */
+/* #content nav form .form-input input {
 	flex-grow: 1;
 	padding: 0 16px;
 	height: 100%;
@@ -250,11 +250,11 @@ body.dark {
 	outline: none;
 	border-radius: 0 36px 36px 0;
 	cursor: pointer;
-}
-#content nav .notification {
+} */
+/* #content nav .notification {
 	font-size: 20px;
 	position: relative;
-}
+} */
 /* #content nav .notification .num {
 	position: absolute;
 	top: -6px;
@@ -271,12 +271,12 @@ body.dark {
 	justify-content: center;
 	align-items: center;
 } */
-#content nav .profile img {
+/* #content nav .profile img {
 	width: 36px;
 	height: 36px;
 	object-fit: cover;
 	border-radius: 50%;
-}
+} */
 /* #content nav .switch-mode {
 	display: block;
 	min-width: 50px;
@@ -407,7 +407,7 @@ body.dark {
 
 
 
-#content main .table-data {
+/* #content main .table-data {
 	display: flex;
 	flex-wrap: wrap;
 	grid-gap: 24px;
@@ -483,10 +483,10 @@ body.dark {
 }
 #content main .table-data .order table tr td .status.pending {
 	background: var(--orange);
-}
+} */
 
 
-#content main .table-data .todo {
+/* #content main .table-data .todo {
 	flex-grow: 1;
 	flex-basis: 300px;
 }
@@ -514,19 +514,14 @@ body.dark {
 }
 #content main .table-data .todo .todo-list li:last-child {
 	margin-bottom: 0;
-}
+} */
 /* MAIN */
 /* CONTENT */
+/* 
 
 
 
-
-
-
-
-
-
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
 	#sidebar {
 		width: 200px;
 	}
@@ -541,9 +536,9 @@ body.dark {
 	}
 }
 
+ */
 
-
-
+ /* */
 
 
 @media screen and (max-width: 576px) {

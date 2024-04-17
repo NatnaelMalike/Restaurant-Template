@@ -21,7 +21,8 @@ module.exports = {
         sml: {'max': '639px'}
       },
       width:{
-        hor_wid: 'calc(100% - 288px)'
+        hor_wid: 'calc(100% - 288px)',
+        hor_sm_wid: 'width: calc(100% - 60px)'
       },
       gridTemplateColumns:{
         colums: 'repeat(auto-fit, minmax(240px, 1fr))'

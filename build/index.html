@@ -12,7 +12,7 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
         <script defer src="./js/index.js"></script>
-        <script defer src="./js/script.js" ></script>
+        <script defer src="./js/script.js"></script>
         <title>Restaurant Template</title>
         <link rel="stylesheet" href="./css/style.css" />
     </head>
@@ -28,10 +28,13 @@
                         class="w-20" />
                     <h1 class="text-4xl text-primary">አቢሲኒያ</h1>
                 </div>
-                <nav id="mobileNav" class="lg:text-2xl lg:block space-x-8 sml:page-navigation sm:hidden" data-visible="false">
+                <nav
+                    id="mobileNav"
+                    class="lg:text-2xl lg:block space-x-8 sml:page-navigation sm:hidden"
+                    data-visible="false">
                     <a
                         href="#home"
-                        class="hover:text-primary transition duration-300 font-medium text-white sm:hidden  links"
+                        class="hover:text-primary transition duration-300 font-medium text-white sm:hidden links"
                         >Home</a
                     >
                     <a
@@ -39,7 +42,8 @@
                         class="hover:text-primary transition duration-300 font-medium text-white links"
                         >About</a
                     >
-                    <a links
+                    <a
+                        links
                         href="#menu"
                         class="hover:text-primary transition duration-300 font-medium text-white links"
                         >Menu</a
@@ -56,12 +60,17 @@
                     >
                 </nav>
                 <div
-                id="cartButton"
-                    class="flex items-center sm:space-x-4 text-4xl sm:text-3xl font-medium  text-primary p-4 sm:p-2 fixed sm:static bottom-6 right-6 rounded-full sm:rounded-none"> 
-                    <i class="fa-solid fa-cart-shopping cursor-pointer" ></i>
+                    id="cartButton"
+                    class="flex items-center sm:space-x-4 text-4xl sm:text-3xl font-medium text-primary p-4 sm:p-2 fixed sm:static bottom-6 right-6 rounded-full sm:rounded-none">
+                    <i class="fa-solid fa-cart-shopping cursor-pointer"></i>
                 </div>
-                <button id="toggleBtn" class="lg:hidden z-20" aria-expanded="false">
-                    <i class="fa-solid fa-bars text-white text-4xl" id="icon"></i>
+                <button
+                    id="toggleBtn"
+                    class="lg:hidden z-20"
+                    aria-expanded="false">
+                    <i
+                        class="fa-solid fa-bars text-white text-4xl"
+                        id="icon"></i>
                 </button>
             </section>
         </header>
@@ -93,34 +102,47 @@
                     </article>
                 </div>
             </section>
-            <section id="cart" class="w-11/12 sm:w-4/6 lg:w-1/2 lg:right-8 lg:left-auto lg:transform-none fixed p-4 top-32 left-1/2 -translate-x-1/2 bg-tertiary hidden xl:w-1/3 2xl:w-1/4">
-                <h2 class="text-2xl text-center text-white pb-4" a>Your Cart</h2>
+            <section
+                id="cart"
+                class="w-11/12 sm:w-4/6 lg:w-1/2 lg:right-8 lg:left-auto lg:transform-none fixed p-4 top-32 left-1/2 -translate-x-1/2 bg-tertiary hidden xl:w-1/3 2xl:w-1/4">
+                <h2 class="text-2xl text-center text-white pb-4" a>
+                    Your Cart
+                </h2>
                 <button
-                  class="open-close text-2xl text-white btn-popUp absolute top-4 right-2"
-                  id="cart-close"
-                >
-                  <i class="fa-solid fa-xmark"></i>
+                    class="open-close text-2xl text-white btn-popUp absolute top-4 right-2"
+                    id="cart-close">
+                    <i class="fa-solid fa-xmark"></i>
                 </button>
                 <div class="selected-foods-only"></div>
                 <div class="flex items-end flex-col">
-                  <p class="total-quantity text-white">
-                    Total number of foods:
-                    <span class="total-quantity-number">0</span>
-                  </p>
-                  <p class="total-price text-white">
-                    Total Price: <span class="total-price-number">0.00</span> ETB
-                  </p>
+                    <p class="total-quantity text-white">
+                        Total number of foods:
+                        <span class="total-quantity-number">0</span>
+                    </p>
+                    <p class="total-price text-white">
+                        Total Price:
+                        <span class="total-price-number">0.00</span> ETB
+                    </p>
                 </div>
                 <form action="" id="order" class="flex flex-col space-y-4">
-                  <input type="text" name="" id="" placeholder="Name" class="p-2 placeholder:text-white bg-transparent border block w-full focus:border-none" />
-                  <input type="tel" name="" id="" placeholder="Phone" class="p-2 placeholder:text-white bg-transparent border block w-full focus:border-none" />
-                  <input
-                    type="submit"
-                    value="Order"
-                    class="btn px-4 py-2 text-white bg-transparent border block"
-                  />
+                    <input
+                        type="text"
+                        name=""
+                        id=""
+                        placeholder="Name"
+                        class="p-2 placeholder:text-white bg-transparent border block w-full focus:border-none" />
+                    <input
+                        type="tel"
+                        name=""
+                        id=""
+                        placeholder="Phone"
+                        class="p-2 placeholder:text-white bg-transparent border block w-full focus:border-none" />
+                    <input
+                        type="submit"
+                        value="Order"
+                        class="btn px-4 py-2 text-white bg-transparent border block" />
                 </form>
-              </section>
+            </section>
             <section
                 id="about"
                 class="bg-[url('https://assets.website-files.com/63d0c13bf294b9ad2ad7a1f0/63fc745af7ed692b2a0ce9c2_about-banner-bg-1-1.jpg')] pt-8">
@@ -189,7 +211,9 @@
                     <h1 class="text-white text-5xl text-center mb-16">
                         Our Menu
                     </h1>
-                    <div class="flex flex-wrap gap-x-4 justify-center gap-y-4 px-4" id="menu-buttons">
+                    <div
+                        class="flex flex-wrap gap-x-4 justify-center gap-y-4 px-4"
+                        id="menu-buttons">
                         <button
                             class="text-xl text-white border py-4 px-6 bg-transparent border-white transition duration-300 hover:-translate-y-2 whitespace-nowrap"
                             role="tab"
@@ -259,10 +283,7 @@
                         </div>
                         <div
                             class="sm:grid grid-cols-1 auto-cols-fr sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:gap-8 w-5/6 mx-auto hidden"
-                            id="food-container">
-
-
-                        </div>
+                            id="food-container"></div>
                     </div>
                 </div>
             </section>
