@@ -4,15 +4,20 @@
 
 @layer utilities {
     .section-min-height {
-      min-height: 100vh;
+        min-height: 100vh;
     }
-    .page-navigation{
-      @apply fixed top-0 left-1/4 right-0 bottom-0 flex flex-col p-min_vh space-y-6 space-x-0 text-2xl backdrop-blur-xl bg-tertiary/50 transform translate-x-full transition duration-500 ease-in-out
+    .page-navigation {
+        @apply fixed top-0 left-1/4 right-0 bottom-0 flex flex-col p-min_vh space-y-6 space-x-0 text-2xl backdrop-blur-xl bg-tertiary/50 transform translate-x-full transition duration-500 ease-in-out;
     }
-    .page-navigation[data-visible = "true"]{
-      @apply transform  translate-x-0;
+    .page-navigation[data-visible="true"] {
+        @apply transform  translate-x-0;
     }
-    .active{
-      @apply border-primary
+    .active {
+        @apply border-primary;
+    }
+    .active-admin {
+        @apply relative bg-slate-400 before:absolute before:rounded-full before:-top-10 before:right-0 before:content-[''] before:size-10 before:-z-10  
+        before:shadow-[20px_20px] before:text-slate-400 after:shadow-[20px_-20px] after:text-slate-400 after:absolute 
+        after:rounded-full after:-bottom-10 after:right-0 after:content-[''] after:size-10 after:-z-10;
     }
 }

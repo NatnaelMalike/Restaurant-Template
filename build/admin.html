@@ -1,60 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Page</title>
-</head>
-<body>
-    <header class="fixed top-0 w-full bg-tertiary">
-        <section
-            id="desktop-menu"
-            class="sm:w-4/5 mx-auto flex justify-between sm:p-4 items-center sticky top-0">
-            <div class="flex items-center">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+        <link rel="stylesheet" href="./css/adminCss.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <script src="./js/adminScript.js"></script>
+        <title>Admin Page</title>
+    </head>
+
+    <body class="font-poppins bg-slate-400">
+        <section id="sidebar" class="fixed top-0 left-0 bottom-0 w-72 bg-white">
+            <a href="" class="flex items-center space-x-4">
                 <img
                     src="./images/abyssinia-favicon-black.png"
                     alt=""
-                    class="w-20" />
+                    class="w-16" />
                 <h1 class="text-4xl text-primary">አቢሲኒያ</h1>
-            </div>
-            <nav id="mobileNav" class="lg:text-2xl lg:block space-x-8 sml:page-navigation sm:hidden" data-visible="false">
-                <a
-                    href="#home"
-                    class="hover:text-primary transition duration-300 font-medium text-white sm:hidden  links"
-                    >Home</a
-                >
-                <a
-                    href="#about"
-                    class="hover:text-primary transition duration-300 font-medium text-white links"
-                    >About</a
-                >
-                <a links
-                    href="#menu"
-                    class="hover:text-primary transition duration-300 font-medium text-white links"
-                    >Menu</a
-                >
-                <a
-                    href="#reservation"
-                    class="hover:text-primary transition duration-300 font-medium text-white links"
-                    >Reservation</a
-                >
-                <a
-                    href="#contact-us"
-                    class="hover:text-primary transition duration-300 font-medium text-white links"
-                    >Contact US</a
-                >
-            </nav>
-            <div
-            id="cartButton"
-                class="flex items-center sm:space-x-4 text-4xl sm:text-3xl font-medium  text-primary p-4 sm:p-2 fixed sm:static bottom-6 right-6 rounded-full sm:rounded-none"> 
-                <i class="fa-solid fa-cart-shopping cursor-pointer" ></i>
-            </div>
-            <button id="toggleBtn" class="lg:hidden z-20" aria-expanded="false">
-                <i class="fa-solid fa-bars text-white text-4xl" id="icon"></i>
-            </button>
+            </a>
+            <ul class="mt-16">
+                <li
+                    class="active-admin bg-transparent h-12 p-1 ml-1.5 rounded-l-[48px]">
+                    <a
+                        href="#"
+                        class="flex items-center gap-2 pl-2 bg-white size-full rounded-[48px]">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="bg-transparent h-12 p-1 ml-1.5 rounded-l-[48px]">
+                    <a
+                        href="#"
+                        class="flex items-center gap-2 pl-2 bg-white size-full rounded-[48px]">
+                        <i class="fa-solid fa-utensils"></i>
+                        <span>Menu</span>
+                    </a>
+                </li>
+                <li class="bg-transparent h-12 p-1 ml-1.5 rounded-l-[48px]">
+                    <a
+                        href="#"
+                        class="flex items-center gap-2 pl-2 size-full rounded-[48px]">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Orders</span>
+                    </a>
+                </li>
+                <li class="bg-transparent h-12 p-1 ml-1.5 rounded-l-[48px]">
+                    <a
+                        href="#"
+                        class="flex items-center gap-2 pl-2 size-full rounded-[48px]">
+                        <i class="fa-solid fa-table"></i>
+                        <span>Reservations</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="side-menu">
+                <li
+                    class="bg-transparent h-12 active-admin p-1 ml-1.5 rounded-l-[48px]">
+                    <a
+                        href="#"
+                        class="flex items-center gap-2 pl-2 size-full rounded-[48px] bg-white">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
         </section>
-    </header>
-    <section id="addFood"></section>
-    <section id="foodList"></section>
-</body>
+
+        <section
+            id="content"
+            class="relative w-hor_wid left-72 rounded-tl-[40px] bg-transparent">
+            <nav
+                class="bg-white px-6 flex items-center sticky top-0 left-0 h-14 space-x-6 before:content[''] before:size-10 before:rounded-full before:left-0 before:absolute before:shadow-[-20px_-20px] before:text-white before:-bottom-10">
+                <i class="fa-solid fa-bars text-2xl"></i>
+                <form action="#">
+                    <div class="form-input">
+                        <input type="search" placeholder="Search..." />
+                        <button type="submit" class="search-btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <div>
+                    <input type="checkbox" id="switch-mode" hidden />
+                    <label
+                        for="switch-mode"
+                        class="block relative bg-slate-400 rounded-3xl w-14 h-6 before:bg-red-400 before:content-[''] before:w-5 before:absolute before:top-0.5 before:left-0.5 before:bottom-0.5 before:rounded-full"></label>
+                </div>
+                <a href="#" class="relative">
+                    <i class="fa-solid fa-bell text-2xl"></i>
+                    <span
+                        class="absolute -top-2 -right-2 bg-red-600 text-white flex items-center justify-center rounded-full size-5"
+                        >0</span
+                    >
+                </a>
+                <a
+                    href="#"
+                    class="bg-slate-400 rounded-full size-8 flex justify-center items-center">
+                    <i class="fa-solid fa-user-tie text-2xl"></i>
+                </a>
+            </nav>
+
+            <!-- MAIN -->
+            <main class="rounded-tl-[40px] px-9 py-6">
+                <div class="head-title">
+                    <h1 class="text-4xl font-medium">Dashboard</h1>
+                </div>
+
+                <ul class="mt-9 grid grid-cols-colums gap-6">
+                    <li
+                        class="p-6 bg-white flex items-center space-x-6 rounded-2xl">
+                        <div
+                            class="size-20 rounded-xl text-3xl flex items-center justify-center bg-blue-200">
+                            <i
+                                class="fa-solid fa-cart-shopping text-3xl text-blue-700"></i>
+                        </div>
+
+                        <span>
+                            <h3 class="text-3xl font-medium">1020</h3>
+                            <p class="text-xl">Total Orders</p>
+                        </span>
+                    </li>
+                    <li
+                        class="p-6 bg-white flex items-center space-x-6 rounded-2xl">
+                        <div
+                            class="size-20 rounded-xl text-3xl flex items-center justify-center bg-yellow-200">
+                            <i
+                                class="fa-solid fa-table text-3xl text-yellow-600"></i>
+                        </div>
+
+                        <span>
+                            <h3 class="text-3xl font-medium">2834</h3>
+                            <p class="text-xl">Total Reservations</p>
+                        </span>
+                    </li>
+                    <li
+                        class="p-6 bg-white flex items-center space-x-6 rounded-2xl">
+                        <div
+                            class="size-20 rounded-xl text-3xl flex items-center justify-center bg-orange-200">
+                            <i
+                                class="fa-solid fa-dollar-sign text-3xl text-orange-500"></i>
+                        </div>
+
+                        <span>
+                            <h3 class="text-3xl font-medium">2543 ETB</h3>
+                            <p class="text-xl">Revenue</p>
+                        </span>
+                    </li>
+                </ul>
+
+                <div class="mt-8">
+                    <div class="order rounded-2xl bg-white p-6">
+                        <div
+                            class="head flex items-center gap-4 overflow-x-auto">
+                            <h3 class="text-2xl font-medium">Recent Orders</h3>
+                        </div>
+                        <table class="border-collapse w-full mt-4">
+                            <thead>
+                                <tr>
+                                    <th class="text-left pb-2.5 border-b-2">User</th>
+                                    <th class="text-left pb-2.5 border-b-2">Phone</th>
+                                    <th class="text-left pb-2.5 border-b-2">Food(s)</th>
+                                    <th class="text-left pb-2.5 border-b-2">Quantity</th>
+                                    <th class="text-left pb-2.5 border-b-2">Price</th>
+                                    <th class="text-left pb-2.5 border-b-2">Date and Time</th>
+                                    <th class="text-left pb-2.5 border-b-2">status</th>
+                                </tr>
+                            </thead> 
+                            <tbody class="mt-12">
+                                <tr class="hover:bg-slate-200">
+                                    <td class="flex gap-4 items-center py-4">
+                                        <i
+                                            class="fa-solid fa-user-tie text-2xl"></i>
+                                        <p>John Doe</p>
+                                    </td>
+                                    <td class="py-4">+251 915025399</td>
+                                    <td class="py-4">Kikil, Firfir</td>
+                                    <td class="py-4">2</td>
+                                    <td class="py-4"><span>300</span>ETB</td>
+                                    <td class="py-4">07-08-2021, 1:00 pm</td>
+                                    <td class="py-4">
+                                        <span class="font-medium rounded-full bg-blue-500 text-white py-1.5 px-4"
+                                            >Completed</span
+                                        >
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-200">
+                                    <td class="flex gap-4 items-center py-4">
+                                        <i
+                                            class="fa-solid fa-user-tie text-2xl"></i>
+                                        <p>John Doe</p>
+                                    </td>
+                                    <td class="py-4">+251 915025399</td>
+                                    <td class="py-4">Kikil, Firfir</td>
+                                    <td class="py-4">2</td>
+                                    <td class="py-4"><span>300</span>ETB</td>
+                                    <td class="py-4">07-08-2021, 1:00 pm</td>
+                                    <td class="py-4">
+                                        <span class="font-medium rounded-full bg-blue-500 text-white py-1.5 px-4"
+                                            >Completed</span
+                                        >
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-200">
+                                    <td class="flex gap-4 items-center py-4">
+                                        <i
+                                            class="fa-solid fa-user-tie text-2xl"></i>
+                                        <p>John Doe</p>
+                                    </td>
+                                    <td class="py-4">+251 915025399</td>
+                                    <td class="py-4">Kikil, Firfir</td>
+                                    <td class="py-4">2</td>
+                                    <td class="py-4"><span>300</span>ETB</td>
+                                    <td class="py-4">07-08-2021, 1:00 pm</td>
+                                    <td class="py-4">
+                                        <span class="font-medium rounded-full bg-yellow-500 text-white py-1.5 px-4"
+                                            >Pending</span
+                                        >
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-200">
+                                    <td class="flex gap-4 items-center py-4">
+                                        <i
+                                            class="fa-solid fa-user-tie text-2xl"></i>
+                                        <p>John Doe</p>
+                                    </td>
+                                    <td class="py-4">+251 915025399</td>
+                                    <td class="py-4">Kikil, Firfir</td>
+                                    <td class="py-4">2</td>
+                                    <td class="py-4"><span>300</span>ETB</td>
+                                    <td class="py-4">07-08-2021, 1:00 pm</td>
+                                    <td class="py-4">
+                                        <span class="font-medium rounded-full bg-red-500 text-white py-1.5 px-4"
+                                            >Rejected</span
+                                        >
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="todo">
+                        <div class="head">
+                            <h3>Todos</h3>
+                            <i class="bx bx-plus"></i>
+                            <i class="bx bx-filter"></i>
+                        </div>
+                        <ul class="todo-list">
+                            <li class="completed">
+                                <p>Todo List</p>
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                            </li>
+                            <li class="completed">
+                                <p>Todo List</p>
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                            </li>
+                            <li class="not-completed">
+                                <p>Todo List</p>
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                            </li>
+                            <li class="completed">
+                                <p>Todo List</p>
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                            </li>
+                            <li class="not-completed">
+                                <p>Todo List</p>
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+            <!-- MAIN -->
+        </section>
+        <!-- CONTENT -->
+
+        <script src="script.js"></script>
+    </body>
 </html>
