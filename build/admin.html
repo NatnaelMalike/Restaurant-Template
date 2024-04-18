@@ -11,9 +11,8 @@
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-        <link rel="stylesheet" href="./css/adminCss.css" />
         <link rel="stylesheet" href="./css/style.css" />
-        <script src="./js/adminScript.js"></script>
+        <script src="./js/adminScript.js" defer></script>
         <title>Admin Page</title>
     </head>
 
@@ -62,8 +61,7 @@
                 </li>
             </ul>
             <ul class="side-menu">
-                <li
-                    class="bg-transparent h-12 p-1 ml-1.5 rounded-l-[48px]">
+                <li class="bg-transparent h-12 p-1 ml-1.5 rounded-l-[48px]">
                     <a
                         href="#"
                         class="flex items-center gap-2 pl-2 size-full rounded-[48px] bg-white">
@@ -88,30 +86,28 @@
                         </button>
                     </div>
                 </form> -->
-<div class="flex gap-8 ml-8">
-    <div>
+                <div class="flex gap-8 ml-8">
+                    <!-- <div>
         <input type="checkbox" id="switch-mode" hidden />
         <label
             for="switch-mode"
             class="block relative bg-slate-400 rounded-3xl w-14 h-6 before:bg-red-400 before:content-[''] before:w-5 before:absolute before:top-0.5 before:left-0.5 before:bottom-0.5 before:rounded-full"></label>
-    </div>
-    <a href="#" class="relative">
-        <i class="fa-solid fa-bell text-2xl"></i>
-        <span
-            class="absolute -top-2 -right-2 bg-red-600 text-white flex items-center justify-center rounded-full size-5"
-            >0</span
-        >
-    </a>
-    <a
-        href="#"
-        class="bg-slate-400 rounded-full size-8 flex justify-center items-center">
-        <i class="fa-solid fa-user-tie text-2xl"></i>
-    </a>
-</div>
-                
+    </div> -->
+                    <a href="#" class="relative">
+                        <i class="fa-solid fa-bell text-2xl"></i>
+                        <span
+                            class="absolute -top-2 -right-2 bg-red-600 text-white flex items-center justify-center rounded-full size-5"
+                            >0</span
+                        >
+                    </a>
+                    <a
+                        href="#"
+                        class="bg-slate-400 rounded-full size-8 flex justify-center items-center">
+                        <i class="fa-solid fa-user-tie text-2xl"></i>
+                    </a>
+                </div>
             </nav>
 
-            <!-- MAIN -->
             <main class="rounded-tl-[40px] px-9 py-6">
                 <div class="head-title">
                     <h1 class="text-4xl font-medium">Dashboard</h1>
@@ -163,131 +159,36 @@
                     <div class="rounded-2xl bg-white p-6" id="orders">
                         <h3 class="text-3xl font-medium">Orders</h3>
                         <div class="overflow-x-auto">
-                        <table class="border-collapse min-w-[840px] mt-8 w-full">
-                            <thead>
-                                <tr>
-                                    <th class="text-left p-2 border-b-2 whitespace-nowrap">
-                                        User
-                                    </th>
-                                    <th class="text-left p-2 border-b-2 whitespace-nowrap">
-                                        Phone
-                                    </th>
-                                    <th class="text-left p-2 border-b-2 whitespace-nowrap">
-                                        Food(s)
-                                    </th>
-                                    <th class="text-left p-2 border-b-2 whitespace-nowrap">
-                                        Quantity
-                                    </th>
-                                    <th class="text-left p-2 border-b-2 whitespace-nowrap">
-                                        Price
-                                    </th>
-                                    <th class="text-left p-2 border-b-2 whitespace-nowrap">
-                                        Date and Time
-                                    </th>
-                                    <th class="text-left p-2 border-b-2 whitespace-nowrap">
-                                        status
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="mt-12">
-                                <tr class="hover:bg-slate-200">
-                                    <td class="flex gap-4 items-center py-4 px-2">
-                                        <i
-                                            class="fa-solid fa-user-tie text-2xl"></i>
-                                        <p>Natnael Malike</p>
-                                    </td>
-                                    <td class="py-4 px-2">+251 915025399</td>
-                                    <td class="py-4 px-2">Kikil, Firfir</td>
-                                    <td class="py-4 px-2">2</td>
-                                    <td class="py-4 px-2"><span>300</span>ETB</td>
-                                    <td class="py-4 px-2">07-08-2021, 1:00 pm</td>
-                                    <td class="py-4 px-2">
-                                        <span
-                                            class="font-medium rounded-full bg-blue-500 text-white py-1.5 px-4 text-xs"
-                                            >Completed</span
-                                        >
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-slate-200">
-                                    <td class="flex gap-4 items-center py-4 px-2">
-                                        <i
-                                            class="fa-solid fa-user-tie text-2xl"></i>
-                                        <p>Natnael Malike</p>
-                                    </td>
-                                    <td class="py-4 px-2">+251 915025399</td>
-                                    <td class="py-4 px-2">Kikil, Firfir</td>
-                                    <td class="py-4 px-2">2</td>
-                                    <td class="py-4 px-2"><span>300</span>ETB</td>
-                                    <td class="py-4 px-2">07-08-2021, 1:00 pm</td>
-                                    <td class="py-4 px-2">
-                                        <span
-                                            class="font-medium rounded-full bg-blue-500 text-white py-1.5 px-4 text-xs"
-                                            >Completed</span
-                                        >
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-slate-200">
-                                    <td class="flex gap-4 items-center py-4 px-2">
-                                        <i
-                                            class="fa-solid fa-user-tie text-2xl"></i>
-                                        <p>Natnael Malike</p>
-                                    </td>
-                                    <td class="py-4 px-2">+251 915025399</td>
-                                    <td class="py-4 px-2">Kikil, Firfir</td>
-                                    <td class="py-4 px-2">2</td>
-                                    <td class="py-4 px-2"><span>300</span>ETB</td>
-                                    <td class="py-4 px-2">07-08-2021, 1:00 pm</td>
-                                    <td class="py-4 px-2">
-                                        <span
-                                            class="font-medium rounded-full bg-yellow-500 text-white py-1.5 px-4 text-xs"
-                                            >Pending</span
-                                        >
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-slate-200">
-                                    <td class="flex gap-4 items-center py-4 px-2">
-                                        <i
-                                            class="fa-solid fa-user-tie text-2xl"></i>
-                                        <p>Natnael Malike</p>
-                                    </td>
-                                    <td class="py-4 px-2">+251 915025399</td>
-                                    <td class="py-4 px-2">Kikil, Firfir</td>
-                                    <td class="py-4 px-2">2</td>
-                                    <td class="py-4 px-2"><span>300</span>ETB</td>
-                                    <td class="py-4 px-2">07-08-2021, 1:00 pm</td>
-                                    <td class="py-4 px-2">
-                                        <span
-                                            class="font-medium rounded-full bg-red-500 text-white py-1.5 px-4 text-xs"
-                                            >Rejected</span
-                                        >
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    </div>
-                    <div class="rounded-2xl bg-white p-6" id="reservations">
-                        <h3 class="text-3xl font-medium">Reservations</h3>
-                        <div class="overflow-x-auto">
-                            <table class="border-collapse w-full mt-8">
+                            <table
+                                class="border-collapse min-w-[840px] mt-8 w-full">
                                 <thead>
                                     <tr>
-                                        <th class="text-left p-2 whitespace-nowrap border-b-2">
+                                        <th
+                                            class="text-left p-2 border-b-2 whitespace-nowrap">
                                             User
                                         </th>
-                                        <th class="text-left p-2 whitespace-nowrap border-b-2">
+                                        <th
+                                            class="text-left p-2 border-b-2 whitespace-nowrap">
                                             Phone
                                         </th>
-                                        <th class="text-left p-2 whitespace-nowrap border-b-2">
-                                            Table Number
+                                        <th
+                                            class="text-left p-2 border-b-2 whitespace-nowrap">
+                                            Food(s)
                                         </th>
-                                        <th class="text-left p-2 whitespace-nowrap border-b-2">
-                                            No. of Guests
+                                        <th
+                                            class="text-left p-2 border-b-2 whitespace-nowrap">
+                                            Quantity
                                         </th>
-                                        <th class="text-left p-2 whitespace-nowrap border-b-2">
+                                        <th
+                                            class="text-left p-2 border-b-2 whitespace-nowrap">
+                                            Price
+                                        </th>
+                                        <th
+                                            class="text-left p-2 border-b-2 whitespace-nowrap">
                                             Date and Time
                                         </th>
-                                        <th class="text-left p-2 whitespace-nowrap border-b-2">
+                                        <th
+                                            class="text-left p-2 border-b-2 whitespace-nowrap">
                                             status
                                         </th>
                                     </tr>
@@ -300,7 +201,146 @@
                                                 class="fa-solid fa-user-tie text-2xl"></i>
                                             <p>Natnael Malike</p>
                                         </td>
-                                        <td class="py-4 px-2">+251 915025399</td>
+                                        <td class="py-4 px-2">
+                                            +251 915025399
+                                        </td>
+                                        <td class="py-4 px-2">Kikil, Firfir</td>
+                                        <td class="py-4 px-2">2</td>
+                                        <td class="py-4 px-2">
+                                            <span>300</span>ETB
+                                        </td>
+                                        <td class="py-4 px-2">
+                                            07-08-2021, 1:00 pm
+                                        </td>
+                                        <td class="py-4 px-2">
+                                            <span
+                                                class="font-medium rounded-full bg-blue-500 text-white py-1.5 px-4 text-xs"
+                                                >Completed</span
+                                            >
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-200">
+                                        <td
+                                            class="flex gap-4 items-center py-4 px-2">
+                                            <i
+                                                class="fa-solid fa-user-tie text-2xl"></i>
+                                            <p>Natnael Malike</p>
+                                        </td>
+                                        <td class="py-4 px-2">
+                                            +251 915025399
+                                        </td>
+                                        <td class="py-4 px-2">Kikil, Firfir</td>
+                                        <td class="py-4 px-2">2</td>
+                                        <td class="py-4 px-2">
+                                            <span>300</span>ETB
+                                        </td>
+                                        <td class="py-4 px-2">
+                                            07-08-2021, 1:00 pm
+                                        </td>
+                                        <td class="py-4 px-2">
+                                            <span
+                                                class="font-medium rounded-full bg-blue-500 text-white py-1.5 px-4 text-xs"
+                                                >Completed</span
+                                            >
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-200">
+                                        <td
+                                            class="flex gap-4 items-center py-4 px-2">
+                                            <i
+                                                class="fa-solid fa-user-tie text-2xl"></i>
+                                            <p>Natnael Malike</p>
+                                        </td>
+                                        <td class="py-4 px-2">
+                                            +251 915025399
+                                        </td>
+                                        <td class="py-4 px-2">Kikil, Firfir</td>
+                                        <td class="py-4 px-2">2</td>
+                                        <td class="py-4 px-2">
+                                            <span>300</span>ETB
+                                        </td>
+                                        <td class="py-4 px-2">
+                                            07-08-2021, 1:00 pm
+                                        </td>
+                                        <td class="py-4 px-2">
+                                            <span
+                                                class="font-medium rounded-full bg-yellow-500 text-white py-1.5 px-4 text-xs"
+                                                >Pending</span
+                                            >
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-200">
+                                        <td
+                                            class="flex gap-4 items-center py-4 px-2">
+                                            <i
+                                                class="fa-solid fa-user-tie text-2xl"></i>
+                                            <p>Natnael Malike</p>
+                                        </td>
+                                        <td class="py-4 px-2">
+                                            +251 915025399
+                                        </td>
+                                        <td class="py-4 px-2">Kikil, Firfir</td>
+                                        <td class="py-4 px-2">2</td>
+                                        <td class="py-4 px-2">
+                                            <span>300</span>ETB
+                                        </td>
+                                        <td class="py-4 px-2">
+                                            07-08-2021, 1:00 pm
+                                        </td>
+                                        <td class="py-4 px-2">
+                                            <span
+                                                class="font-medium rounded-full bg-red-500 text-white py-1.5 px-4 text-xs"
+                                                >Rejected</span
+                                            >
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl bg-white p-6" id="reservations">
+                        <h3 class="text-3xl font-medium">Reservations</h3>
+                        <div class="overflow-x-auto">
+                            <table class="border-collapse w-full mt-8">
+                                <thead>
+                                    <tr>
+                                        <th
+                                            class="text-left p-2 whitespace-nowrap border-b-2">
+                                            User
+                                        </th>
+                                        <th
+                                            class="text-left p-2 whitespace-nowrap border-b-2">
+                                            Phone
+                                        </th>
+                                        <th
+                                            class="text-left p-2 whitespace-nowrap border-b-2">
+                                            Table Number
+                                        </th>
+                                        <th
+                                            class="text-left p-2 whitespace-nowrap border-b-2">
+                                            No. of Guests
+                                        </th>
+                                        <th
+                                            class="text-left p-2 whitespace-nowrap border-b-2">
+                                            Date and Time
+                                        </th>
+                                        <th
+                                            class="text-left p-2 whitespace-nowrap border-b-2">
+                                            status
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="mt-12">
+                                    <tr class="hover:bg-slate-200">
+                                        <td
+                                            class="flex gap-4 items-center py-4 px-2">
+                                            <i
+                                                class="fa-solid fa-user-tie text-2xl"></i>
+                                            <p>Natnael Malike</p>
+                                        </td>
+                                        <td class="py-4 px-2">
+                                            +251 915025399
+                                        </td>
                                         <td class="py-4 px-2">02</td>
                                         <td class="py-4 px-2">5</td>
                                         <td class="py-4 px-2">
@@ -320,7 +360,9 @@
                                                 class="fa-solid fa-user-tie text-2xl"></i>
                                             <p>Natnael Malike</p>
                                         </td>
-                                        <td class="py-4 px-2">+251 915025399</td>
+                                        <td class="py-4 px-2">
+                                            +251 915025399
+                                        </td>
                                         <td class="py-4 px-2">02</td>
                                         <td class="py-4 px-2">5</td>
                                         <td class="py-4 px-2">
@@ -340,7 +382,9 @@
                                                 class="fa-solid fa-user-tie text-2xl"></i>
                                             <p>Natnael Malike</p>
                                         </td>
-                                        <td class="py-4 px-2">+251 915025399</td>
+                                        <td class="py-4 px-2">
+                                            +251 915025399
+                                        </td>
                                         <td class="py-4 px-2">02</td>
                                         <td class="py-4 px-2">5</td>
                                         <td class="py-4 px-2">
@@ -360,7 +404,9 @@
                                                 class="fa-solid fa-user-tie text-2xl"></i>
                                             <p>Natnael Malike</p>
                                         </td>
-                                        <td class="py-4 px-2">+251 915025399</td>
+                                        <td class="py-4 px-2">
+                                            +251 915025399
+                                        </td>
                                         <td class="py-4 px-2">02</td>
                                         <td class="py-4 px-2">5</td>
                                         <td class="py-4 px-2">
@@ -380,27 +426,39 @@
                     <div
                         class="rounded-2xl bg-white p-6 overflow-x-auto"
                         id="menu">
-                        <h3 class="text-3xl font-medium">Menu</h3>
+                        <div class="flex gap-12 open-modal" aria-controls="add-food">
+                            <h3 class="text-3xl font-medium">Menu</h3>
+                            <button class="text-xl bg-teal-600 text-white rounded-full px-4 py-1">
+                                Add Food
+                            </button>
+                        </div>
+
                         <div class="overflow-x-auto">
                             <table class="border-collapse w-full mt-8">
                                 <thead>
                                     <tr>
-                                        <th class="text-left p-2 whitespace-nowrap border-b-2">
+                                        <th
+                                            class="text-left p-2 whitespace-nowrap border-b-2">
                                             Food Name
                                         </th>
-                                        <th class="text-left p-2 whitespace-nowrap border-b-2">
+                                        <th
+                                            class="text-left p-2 whitespace-nowrap border-b-2">
                                             Ingredients
                                         </th>
-                                        <th class="text-left p-2 whitespace-nowrap border-b-2">
+                                        <th
+                                            class="text-left p-2 whitespace-nowrap border-b-2">
                                             Category
                                         </th>
-                                        <th class="text-left p-2 whitespace-nowrap border-b-2">
+                                        <th
+                                            class="text-left p-2 whitespace-nowrap border-b-2">
                                             Price
                                         </th>
-                                        <th class="text-left p-2 whitespace-nowrap border-b-2">
+                                        <th
+                                            class="text-left p-2 whitespace-nowrap border-b-2">
                                             Edit
                                         </th>
-                                        <th class="text-left p-2 whitespace-nowrap border-b-2">
+                                        <th
+                                            class="text-left p-2 whitespace-nowrap border-b-2">
                                             Delete
                                         </th>
                                     </tr>
@@ -420,7 +478,9 @@
                                             <span>450</span>ETB
                                         </td>
                                         <td class="py-4 px-2">
-                                            <button>
+                                            <button
+                                                aria-controls="edit-food"
+                                                class="open-modal">
                                                 <i
                                                     class="fa-solid fa-pen-to-square text-2xl"></i>
                                             </button>
@@ -446,7 +506,9 @@
                                             <span>550</span>ETB
                                         </td>
                                         <td class="py-4 px-2">
-                                            <button>
+                                            <button
+                                                class="open-modal"
+                                                aria-controls="edit-food">
                                                 <i
                                                     class="fa-solid fa-pen-to-square text-2xl"></i>
                                             </button>
@@ -472,7 +534,9 @@
                                             <span>250</span>ETB
                                         </td>
                                         <td class="py-4 px-2">
-                                            <button>
+                                            <button
+                                                class="open-modal"
+                                                aria-controls="edit-food">
                                                 <i
                                                     class="fa-solid fa-pen-to-square text-2xl"></i>
                                             </button>
@@ -490,10 +554,75 @@
                     </div>
                 </div>
             </main>
-            <!-- MAIN -->
         </section>
-        <!-- CONTENT -->
 
-        <script src="script.js"></script>
+        <dialog
+            id="addFood"
+            class="w-11/12 sm:w-4/6 lg:w-1/2 p-4 bg-tertiary xl:w-1/3 2xl:w-1/4 modal-add">
+            <h2 class="text-2xl text-center text-white pb-4" a>
+                Add a new Food
+            </h2>
+            <button
+                class="open-close text-2xl text-white btn-popUp absolute top-4 right-2 close-modal" aria-controls="add-food">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="selected-foods-only"></div>
+            <form
+                action=""
+                id="order"
+                class="flex flex-col space-y-4"
+                method="dialog">
+                <input
+                    type="text"
+                    name=""
+                    id=""
+                    placeholder="Name"
+                    class="p-2 placeholder:text-gray-400 bg-transparent border block w-full focus:border-none text-white" />
+                <input
+                    type="tel"
+                    name=""
+                    id=""
+                    placeholder="price"
+                    class="p-2 placeholder:text-gray-400 bg-transparent border block w-full focus:border-none text-white" />
+                <input
+                    type="submit"
+                    value="Submit"
+                    class="btn px-4 py-2 text-white bg-transparent border block" />
+            </form>
+        </dialog>
+        <dialog
+            id="editFood"
+            class="w-11/12 sm:w-4/6 lg:w-1/2 p-4 bg-tertiary xl:w-1/3 2xl:w-1/4 modal-edit">
+            <h2 class="text-2xl text-center text-white pb-4" a>
+                Editing This Food
+            </h2>
+            <button
+                class="open-close text-2xl text-white btn-popUp absolute top-4 right-2 close-modal" aria-controls="edit-food">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="selected-foods-only"></div>
+            <form
+                action=""
+                id="order"
+                class="flex flex-col space-y-4"
+                method="dialog">
+                <input
+                    type="text"
+                    name=""
+                    id=""
+                    placeholder="Name"
+                    class="p-2 placeholder:text-gray-400 bg-transparent border block w-full focus:border-none text-white" />
+                <input
+                    type="tel"
+                    name=""
+                    id=""
+                    placeholder="price"
+                    class="p-2 placeholder:text-gray-400 bg-transparent border block w-full focus:border-none text-white" />
+                <input
+                    type="submit"
+                    value="Submit"
+                    class="btn px-4 py-2 text-white bg-transparent border block" />
+            </form>
+        </dialog>
     </body>
 </html>
