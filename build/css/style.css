@@ -875,6 +875,26 @@ video {
   cursor: pointer;
 }
 
+.scroll-m-8 {
+  scroll-margin: 2rem;
+}
+
+.scroll-m-10 {
+  scroll-margin: 2.5rem;
+}
+
+.scroll-m-12 {
+  scroll-margin: 3rem;
+}
+
+.scroll-m-14 {
+  scroll-margin: 3.5rem;
+}
+
+.scroll-m-16 {
+  scroll-margin: 4rem;
+}
+
 .list-inside {
   list-style-position: inside;
 }

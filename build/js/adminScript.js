@@ -24,3 +24,13 @@ closeModal.forEach(btns => {
 	})
 })
 
+const tabs = document.querySelectorAll('[role="tab"]');
+tabs.forEach((tab) => {
+    tab.addEventListener("click", function () {
+        tabs.forEach((tab) => {
+            tab.classList.remove("active-admin");
+        });
+        tab.classList.add("active-admin");
+        
+    });
+});

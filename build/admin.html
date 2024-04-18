@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,7 +27,7 @@
             </a>
             <ul class="mt-16">
                 <li
-                    class="active-admin bg-transparent h-12 p-1 ml-1.5 rounded-l-[48px]">
+                    class="active-admin bg-transparent h-12 p-1 ml-1.5 rounded-l-[48px]" role="tab">
                     <a
                         href="#"
                         class="flex items-center gap-2 pl-2 bg-white size-full rounded-[48px]">
@@ -35,26 +35,26 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-                <li class="bg-transparent h-12 p-1 ml-1.5 rounded-l-[48px]">
+                <li class="bg-transparent h-12 p-1 ml-1.5 rounded-l-[48px]" role="tab">
                     <a
-                        href="#"
+                        href="#menu"
                         class="flex items-center gap-2 pl-2 bg-white size-full rounded-[48px]">
                         <i class="fa-solid fa-utensils"></i>
                         <span>Menu</span>
                     </a>
                 </li>
-                <li class="bg-transparent h-12 p-1 ml-1.5 rounded-l-[48px]">
+                <li class="bg-transparent h-12 p-1 ml-1.5 rounded-l-[48px]" role="tab">
                     <a
-                        href="#"
-                        class="flex items-center gap-2 pl-2 size-full rounded-[48px]">
+                        href="#orders"
+                        class="flex items-center gap-2 pl-2 bg-white size-full rounded-[48px]">
                         <i class="fa-solid fa-cart-shopping"></i>
                         <span>Orders</span>
                     </a>
                 </li>
-                <li class="bg-transparent h-12 p-1 ml-1.5 rounded-l-[48px]">
+                <li class="bg-transparent h-12 p-1 ml-1.5 rounded-l-[48px]" role="tab">
                     <a
-                        href="#"
-                        class="flex items-center gap-2 pl-2 size-full rounded-[48px]">
+                        href="#reservations"
+                        class="flex items-center gap-2 pl-2 bg-white size-full rounded-[48px]">
                         <i class="fa-solid fa-table"></i>
                         <span>Reservations</span>
                     </a>
@@ -156,7 +156,7 @@
                 </ul>
 
                 <div class="mt-8 space-y-8">
-                    <div class="rounded-2xl bg-white p-6" id="orders">
+                    <div class="rounded-2xl bg-white p-6 scroll-m-16" id="orders">
                         <h3 class="text-3xl font-medium">Orders</h3>
                         <div class="overflow-x-auto">
                             <table
@@ -426,9 +426,9 @@
                     <div
                         class="rounded-2xl bg-white p-6 overflow-x-auto"
                         id="menu">
-                        <div class="flex gap-12 open-modal" aria-controls="add-food">
+                        <div class="flex gap-12 justify-between">
                             <h3 class="text-3xl font-medium">Menu</h3>
-                            <button class="text-xl bg-teal-600 text-white rounded-full px-4 py-1">
+                            <button class="sm:text-xl bg-teal-600 text-white rounded-full px-4 py-1 text-xs whitespace-nowrap open-modal" aria-controls="add-food">
                                 Add Food
                             </button>
                         </div>
